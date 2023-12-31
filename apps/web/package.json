@@ -10,13 +10,15 @@
     "format:fix": "prettier . --write --cache --cache-location=\"node_modules/.cache/prettiercache\" --log-level=warn",
     "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf node_modules .turbo .next"
   },
   "dependencies": {
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@repo/ui": "0.0.0"
+    "@repo/just-in-time": "0.0.0",
+    "@repo/compiled": "0.0.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.19",
