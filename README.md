@@ -1,6 +1,16 @@
-#### turb discussion #6203 repro
+### turborepo-starter.
 
-Hi Anthony! The repo follows the structure,
+A base template for turborepo-next-tailwind.
+
+```sh
+git clone https://github.com/is-it-ayush/turborepo-starter.git ./turborepo-starter
+&& cd ./turborepo-starter
+&& rm -rf .git
+&& git init
+&& git commit -am "chore: init turborepo-starter"
+```
+
+### structure.
 
 ```
 .
@@ -14,8 +24,21 @@ Hi Anthony! The repo follows the structure,
     └── ./tsconfig (@repo/tsconfig): Reuseable Typescript Configurations.
 ```
 
-Let's say my package `@repo/compiled` generates some JS bindings after being compiled on a
-specific platform (suppose `windows-latest`) such that the bindings in `/dist` are already
-present before the compilation of my web application (`@repo/web`) takes place
-(suppose `ubuntu-latest`) via a different workflow. All I want my nextjs application (`@repo/web`)
-to do is bundle those bindings at build time.
+### packages.
+
+There are two types of packages and an example of both is included in this starter. You can chose the style you
+like and remove the other or you could keep both.
+
+- `compiled packages`: these packages **need to be compiled** (/transpiled) before they can be used in your app.
+  - example: [@repo/compiled](./packages/compiled/)
+- `transpiled packages`: these packages **do not need to be compiled** (/transpiled) before they can be used in your app. instead,
+they are compiled during application bundling (tranpilation) by the bundler.
+  - example: [@repo/just-in-time](./packages/just-in-time/)
+
+### license.
+
+It's MIT. You can read it [here](./LICENSE.md).
+
+### credits.
+
+by [@is_it_ayush](https://x.com/is_it_ayush) with the help of [monorepo maestros](https://www.shew.dev/monorepos).
