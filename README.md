@@ -3,10 +3,11 @@
 A base template for turborepo-next-tailwind.
 
 ```sh
-git clone https://github.com/is-it-ayush/turborepo-starter.git ./turborepo-starter
-&& cd ./turborepo-starter
-&& rm -rf .git
-&& git init
+git clone https://github.com/is-it-ayush/turborepo-starter.git ./turborepo-starter \
+&& cd ./turborepo-starter \
+&& rm -rf .git \
+&& git init \
+&& git add . \
 && git commit -am "chore: init turborepo-starter"
 ```
 
